@@ -1,0 +1,45 @@
+#rules {
+    width: 60%;
+}
+
+#rules >.flow-container {
+    justify-content: flex-start;
+    padding: 20px 0;
+    padding-right: 10vw;
+
+}
+
+.rules-container {
+    flex-grow: 1;
+    max-width: 1020px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 100px;
+    gap: 40px;
+}
+.rule {
+    display: flex;
+    flex-direction: column;
+    gap:12px;
+    text-align: justify;
+}
+
+.rule > img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    align-self: center;
+    opacity: 0.8;
+}
+
+.rule > img:hover {
+    opacity: 1;
+}
+
+.rule > h2 {
+    color: #b2ffff;
+}
+
+.rule > h2:hover {
+    color: #0edda4;
+}
