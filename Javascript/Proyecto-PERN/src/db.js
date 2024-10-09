@@ -9,5 +9,5 @@ export const pool = new pg.Pool({
 });
 
 pool.on("connect", () => {
-    console.log("conectando a la base de datos")
+    console.log("Conectando a la base de datos...")
 });
