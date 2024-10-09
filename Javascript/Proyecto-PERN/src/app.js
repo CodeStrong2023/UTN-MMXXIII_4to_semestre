@@ -11,7 +11,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 
-app.get("/", (req, res) => res.json({ message: "Bienvenidos a mi proyecto"}));
+app.get("/", (req, res) => res.json({ message: "Bienvenidos a proyecto PERN"}));
 app.use('/api',tareasRoutes);
 app.use('/api', authRoutes);
 

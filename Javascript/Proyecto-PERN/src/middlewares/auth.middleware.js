@@ -11,7 +11,7 @@ export const isAuth = (req, res, next) => {
     jwt.verify(token, "xyz123", (err, decoded) => {
         if (err) {
             return res.status(401).json({
-                message: "no estas autorizado"
+                message: "No estas autorizado"
             });
         }
         req.usuarioId = decoded.indexOf;
