@@ -4,6 +4,8 @@ CRATE TABLE tareas (
     descripcion TEXT,
 );
 
+ALTER TABLE tareas ADD COLUMN usuario_id INTEGER REFERENCES usuarios(id);
+
 CREATE TABLE usuarios (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -12,3 +14,5 @@ CREATE TABLE usuarios (
     fecha_registro TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     fecha_actualizacion TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 );
+
+ALTER TABLE usuarios ADD COLUMN gravatar VARCHAR(255);
