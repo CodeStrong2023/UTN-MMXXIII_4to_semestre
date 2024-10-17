@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+#root {
+    height: 100%;
+    width: 100vw;
+    max-width: none; /* Asegúrate de que no tenga max-width */
+    padding: 0; /* Asegúrate de que no tenga padding */
+    margin: 0 auto; /* Si quieres centrarlo */
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
