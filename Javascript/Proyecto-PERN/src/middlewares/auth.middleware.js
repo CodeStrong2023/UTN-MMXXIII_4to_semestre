@@ -14,7 +14,7 @@ export const isAuth = (req, res, next) => {
                 message: "No estas autorizado"
             });
         }
-        req.usuarioId = decoded.indexOf;
+        req.usuarioId = decoded.id;
         next();
     });
 };
