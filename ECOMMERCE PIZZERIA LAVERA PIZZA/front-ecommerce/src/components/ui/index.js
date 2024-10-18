@@ -1,0 +1,1 @@
+export {CardPromoEspecial} from './CardPromoEspecial';
