@@ -3,6 +3,7 @@ import MenuPage from './pages/MenuPage';
 import {HomePage} from './pages/HomePage';
 
 function App() {
+  //comentario random
   return (
     <Routes>
       <Route path='/' element={<HomePage/>}/>
