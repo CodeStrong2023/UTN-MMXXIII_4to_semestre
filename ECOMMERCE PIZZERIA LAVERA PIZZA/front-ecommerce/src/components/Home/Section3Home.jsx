@@ -13,7 +13,7 @@ const Section3Home = () => {
                   <h2 className='transform rotate-[-12deg]'> GET 1</h2>
                   <h2 className='transform rotate-[-12deg]'> FREE </h2>
               </article>
-              <div className='absolute w-1/2 pt-6 pb-6 bg-white text-black -right-10 -bottom-8'>
+              <div className='absolute w-1/2 pt-6 pb-6 bg-white text-black -right-10 -bottom-2'>
                   Use this Coupon
               </div>
         </section>

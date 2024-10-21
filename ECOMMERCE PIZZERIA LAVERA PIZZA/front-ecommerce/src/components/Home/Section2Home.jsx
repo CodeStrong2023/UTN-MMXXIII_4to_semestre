@@ -10,7 +10,7 @@ const Section2Home = () => {
     return (
         <div className='h-screen flex items-center justify-around p-0 m-0 relative'>
             <img src={fondo} alt="" className='absolute  w-screen max-w-none h-full -z-20' />
-            <img src={pizza} alt=""  className=' absolute -z-10 h-3/4 left-[calc(25%-50px)]'/>
+            <img src={pizza} alt=""  className=' absolute -z-10 h-3/4 left-[5%]'/>
             <div></div>
           <section className='w-1/3 flex flex-wrap gap-3 justify-end'>
             {pizzas.map((pizza) => (
