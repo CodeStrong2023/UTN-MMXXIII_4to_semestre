@@ -1,23 +1,23 @@
-import {Routes, Route} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import MenuPage from './pages/MenuPage';
-import {HomePage} from './pages/HomePage';
+import { HomePage } from './pages/HomePage';
 import ContactPAge from './pages/ContactPAge';
-import { Nav } from './components/ui/nav';
+import Layout from './components/ui/Layout';
 
 function App() {
   //comentario random
   return (
-    <>
-      <Nav />
+    < >
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/menu' element={<MenuPage />} />
-        <Route path='/contact' element={<ContactPAge />} />
-        <Route path='*' element={<h1>Not Found</h1>} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="menu" element={<MenuPage />} />
+          <Route path='/contact' element={<ContactPAge />} />
+          <Route path="*" element={<h1>Not Found</h1>} />
+        </Route>
       </Routes>
-    
     </>
-    
+
   )
 }
 

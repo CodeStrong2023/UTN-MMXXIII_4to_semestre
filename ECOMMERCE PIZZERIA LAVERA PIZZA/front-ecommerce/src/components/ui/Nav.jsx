@@ -9,7 +9,7 @@ export const Nav = () => {
   const pathParts = location.pathname.split('/');
   const LastPath = pathParts[pathParts.length - 1] || 'Home'; 
   return (
-    <nav className='w-full h-8 flex justify-around '>
+    <nav className='w-full h-8 flex justify-around bg-white '>
       <h1 className='w-1/6 h-full flex items-center justify-center bg-white text-black font-semibold'> {LastPath}</h1>
       <div className="w-1/5 flex justify-between">
         <NavLink to='/' className='w-1/6 h-full flex items-center justify-center bg-white text-black font-semibold'>Home</NavLink>

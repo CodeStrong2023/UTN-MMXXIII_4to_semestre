@@ -4,7 +4,7 @@ import fondo from '../../assets/images/pizzeria_76.jpg'
 
 export const Section5Home = () => {
     return (
-        <div className='h-screen w-full flex items-center justify-center'>
+        <div className='h-full w-full flex items-center justify-center'>
             <img src={fondo} alt="" className='absolute  w-screen max-w-none h-full -z-20' />
             <section className='h-[600px] w-[450px]   2xl:h-[900px] 2xl:w-[700px] relative flex flex-col items-end justify-end'>
                 <div className=' h-4/5  2xl:h-3/4 w-3/5 bg-flu-Primary-Blue flex flex-col items-center justify-center gap-7 absolute top-0 left-0 -z-10'>
