@@ -8,6 +8,7 @@ export const Nav = () => {
   const location = useLocation()
   const pathParts = location.pathname.split('/');
   const LastPath = pathParts[pathParts.length - 1] || 'Home'; 
+
   return (
     <nav className='w-full h-8 flex justify-around bg-white '>
       <h1 className='w-1/6 h-full flex items-center justify-center bg-white text-black font-semibold'> {LastPath}</h1>
