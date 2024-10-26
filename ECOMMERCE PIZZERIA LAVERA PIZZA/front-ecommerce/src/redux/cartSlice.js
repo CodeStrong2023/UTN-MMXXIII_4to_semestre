@@ -10,7 +10,7 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         addCart: (state, action) => {
-            state.cart = action.payload;
+            state.cart = [...state.cart, action.payload];
         },
         removeCart: (state) => {
             state.cart = [];
@@ -27,5 +27,4 @@ export const cartSlice = createSlice({
 
 export const { addCart, removeCart, removeCartItem, changeCartLoading } = cartSlice.actions;
 
-// Exporta correctamente el reducer del slice
 export default cartSlice.reducer;

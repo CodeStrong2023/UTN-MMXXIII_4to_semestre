@@ -4,10 +4,10 @@ import { Link } from "react-router-dom"
 
 const AllProducts = () => {
     const [pizzasfill, setpizzasfill] = useState(pizzas);
-    const [search, setSearch] = useState(""); // Para búsqueda por nombre
-    const [category, setCategory] = useState(""); // Nuevo estado para categorías
+    const [search, setSearch] = useState(""); 
+    const [category, setCategory] = useState("");
 
-    // Maneja la búsqueda por nombre
+
     const handleSearch = (e) => {
         const searchValue = e.target.value;
         setSearch(searchValue);

@@ -1,12 +1,25 @@
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { pizzas } from "../api/mocks/DataPizzeriaLavera"
+import { useDispatch } from "react-redux";
+import { addCart } from "../redux/cartSlice";
 
 const DetaillPage = () => {
     const { id } = useParams();
     const product = pizzas.find((product) => product.id === parseInt(id));
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     if (!product) {
         return <h1>Producto no encontrado</h1>
+    }
+
+    const handleClick = () => {
+        dispatch(addCart(product))
+        console.log('Producto agregado al carrito')
+    }
+    const seguirComprando = () => {
+        navigate('/allproducts')
+
     }
 
     return (
@@ -18,9 +31,15 @@ const DetaillPage = () => {
                         <h1>{product.name}</h1>
                         <p>Descripción del producto</p>
                         <h2>Precio: $ {product.price}</h2>
-                        <button>Agregar al carrito</button>
+                        <div className="flex flex-col gap-4" >
+                            <button onClick={handleClick}>
+                                Agregar al carrito
+                            </button>
+                            <button onClick={seguirComprando}>
+                                seguir comprando
+                            </button>
+                        </div>                       
                     </div>
-
                 </article>
             </section>
         </div>

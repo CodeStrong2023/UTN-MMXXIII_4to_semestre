@@ -1,10 +1,12 @@
 import cartIcon from '/icons/cartIcon.svg'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const Cart = () => {
   const navigate = useNavigate()
-  const cart = 4 //useSelector(state => state.cart)
 
+  const cartItems = useSelector(state => state.cart.cart)
+  const cart = cartItems.length
 
   const handleClick = () => {
     navigate('/cart')

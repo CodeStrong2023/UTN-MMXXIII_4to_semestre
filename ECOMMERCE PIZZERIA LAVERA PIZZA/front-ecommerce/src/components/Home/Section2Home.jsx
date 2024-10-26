@@ -4,8 +4,13 @@ import CardMenu from '../CardMenu'
 import { MainButon } from '../MainButon'
 import fondo from '../../assets/images/pizzeria_76.jpg'
 import pizza from '../../assets/images/pizzeria_14.png'
+import { useNavigate } from 'react-router-dom'
 
 const Section2Home = () => {
+  const navigate = useNavigate()
+  const seguirComprando = () => {
+    navigate('/allproducts')
+  }
 
     return (
         <div className='h-screen flex items-center justify-around p-0 m-0 relative'>
@@ -16,7 +21,10 @@ const Section2Home = () => {
             {pizzas.map((pizza) => (
               <CardMenu key={pizza.id} product={pizza} />
             ))}
-            <MainButon text='Full Menu' />
+            <div onClick={seguirComprando}>
+              <MainButon text='Full Menu' />
+            </div>
+            
           </section>
         </div>
       );
