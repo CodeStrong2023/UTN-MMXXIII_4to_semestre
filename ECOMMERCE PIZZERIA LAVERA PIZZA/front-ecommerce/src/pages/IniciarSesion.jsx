@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { isEmail } from 'validator';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,6 +8,7 @@ import { addUser } from '../redux/userSlice';
 const IniciarSesion = () => {
     const { register, handleSubmit, formState: { errors } } = useForm()
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const user = useSelector(state => state.user)
     console.log("esto es el redux usaer", user)
     console.log(user.userLoading)
@@ -17,6 +18,7 @@ const IniciarSesion = () => {
 
         
         dispatch(addUser(data))
+        navigate('/')
     }
 
     return (
