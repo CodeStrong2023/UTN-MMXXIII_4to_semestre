@@ -5,6 +5,7 @@ import ContactPAge from './pages/ContactPAge';
 import {Nav} from './components/ui/Nav';
 import AllProducts from './pages/AllProducts';
 import DetaillPage from './pages/DetaillPage';
+import IniciarSesion from './pages/IniciarSesion';
 
 function App() {
   //comentario random
@@ -17,6 +18,7 @@ function App() {
       <Route path='/contact' element={<ContactPAge />} />
       <Route path='/allProducts' element={<AllProducts/>} />
       <Route path='/products/:id' element={<DetaillPage/>} />
+      <Route path='/iniciarSesion' element={<IniciarSesion/>} />
       <Route path='*' element={<h1>Not Found</h1>} />
       
     </Routes>
