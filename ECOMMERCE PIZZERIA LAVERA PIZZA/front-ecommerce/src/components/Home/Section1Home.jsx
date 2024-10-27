@@ -8,10 +8,10 @@ export const Section1Home = () => {
       <img src={fondo} alt="" className='absolute  w-screen max-w-none h-full -z-10' />
       <section className='h-2/3 w-2/4 flex flex-col gap-9 items-start '>
         <div>
-          <h1 className='text-9xl transform rotate-[-14deg] p'>La Vera</h1>
-          <h1 className='text-9xl transform rotate-[-14deg] p'>Pizzeria</h1>
+          <h1 className=' 2xl:text-9xl transform rotate-[-14deg] p'>La Vera</h1>
+          <h1 className='2xl:text-9xltransform rotate-[-14deg] p'>Pizzeria</h1>
         </div>
-        <p className='text-justify w-2/4 pt-14 '>
+        <p className='text-sm 2xl:text-base text-justify w-2/4 pt-14 '>
           Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor
           risus. Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet,
           consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit.
