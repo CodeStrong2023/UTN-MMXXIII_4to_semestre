@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { removeCartItem } from '../../redux/cartSlice';
+import { removeCartItem, updateCartItemQuantity } from '../../redux/cartSlice';
 
 const CartCard = ({ producto }) => {
-    const [quantity, setQuantity] = useState(1);
     const dispatch = useDispatch();
+    const [quantity, setQuantity] = useState(producto.quantity || 1); // Inicializar con la cantidad del estado global
 
     const handleRemove = () => {
         dispatch(removeCartItem(producto.id));
     };
 
+    const handleQuantityChange = (newQuantity) => {
+        if (newQuantity >= 1) {  // Evitar cantidades menores a 1
+            setQuantity(newQuantity);
+            dispatch(updateCartItemQuantity({ id: producto.id, quantity: newQuantity }));
+        }
+    };
 
-
-    if (!producto) return null; 
+    if (!producto) return null;
 
     return (
         <div className="h-40 w-2/3 flex items-center justify-between border-b border-gray-400">
@@ -25,15 +30,14 @@ const CartCard = ({ producto }) => {
                     </div>
                     <button className="text-red-600 text-start" onClick={handleRemove} >Remove</button>
                 </div>
-
             </div>
 
             <div className="h-4/5 w-1/6 flex flex-col">
                 <p className="font-semibold text-2xl mb-6">$ {producto.price}</p>
                 <div className="w-1/2 flex gap-3 rounded-xl border border-gray-400">
-                    <button className="text-red-600 ml-2" onClick={() => setQuantity(quantity - 1)}>-</button>
+                    <button className="text-red-600 ml-2" onClick={() => handleQuantityChange(quantity - 1)}>-</button>
                     <p className="font-bold">{quantity}</p>
-                    <button className="text-green-600" onClick={() => setQuantity(quantity + 1)}>+</button>
+                    <button className="text-green-600" onClick={() => handleQuantityChange(quantity + 1)}>+</button>
                 </div>
             </div>
         </div>

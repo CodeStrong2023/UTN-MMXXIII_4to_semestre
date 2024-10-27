@@ -10,14 +10,10 @@ const IniciarSesion = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const user = useSelector(state => state.user)
-    console.log("esto es el redux usaer", user)
-    console.log(user.userLoading)
-
+    
     const customSubmit = (data) => {
-        console.log(data)
-
-        
         dispatch(addUser(data))
+        console.log("esto es el redux usaer", user)
         navigate('/')
     }
 
