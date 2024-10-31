@@ -5,8 +5,11 @@ import Section3Home from '../components/Home/Section3Home'
 import { Section4Home } from '../components/Home/Section4Home'
 import { Section5Home } from '../components/Home/Section5Home'
 import Section6Home from '../components/Home/Section6Home'
+import {productsService} from '../api/axios/services'
 
 export const HomePage = () => {
+
+  console.log(productsService.getProducts())
   return (
     <div className='w-[100%] h-full'>
       <Section1Home />

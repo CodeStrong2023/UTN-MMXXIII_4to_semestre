@@ -28,6 +28,8 @@ export const cartSlice = createSlice({
             state.cart = state.cart.filter(item => item.id !== itemId);
             saveCartToLocalStorage(state.cart);
         },
+        // colonar al item, cambuiar cantidad y remplazar 
+        //preguntar porque no deberia mutar objetos en estados y funcions de js y react
         updateCartItemQuantity: (state, action) => {
             const { id, quantity } = action.payload;
             const item = state.cart.find(item => item.id === id);

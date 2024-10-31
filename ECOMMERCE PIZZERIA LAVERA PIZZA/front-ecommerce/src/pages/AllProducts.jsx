@@ -1,65 +1,83 @@
-import { pizzas } from "../api/mocks/DataPizzeriaLavera"
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { productsService } from "../api/axios/services";
 
 const AllProducts = () => {
-    const [pizzasfill, setpizzasfill] = useState(pizzas);
+    const [productsfill, setProductsfill] = useState([]);
     const [search, setSearch] = useState(""); 
     const [category, setCategory] = useState("");
+    const [products, setProducts] = useState([]);
 
+    useEffect(() => {
+        const fetchProducts = async () => {
+            const products = await productsService.getProducts();
+            setProducts(products);
+            setProductsfill(products);
+        };
+        fetchProducts();
+    }, []);
 
     const handleSearch = (e) => {
         const searchValue = e.target.value;
         setSearch(searchValue);
-        const searchProduct = pizzas.filter((product) => {
+        const searchProduct = products.filter((product) => {
             return product.name.toLowerCase().includes(searchValue.toLowerCase());
         });
-        setpizzasfill(searchProduct);
+        setProductsfill(searchProduct);
     };
 
-
     const handleCategory = (e) => {
-        const selectedCategory = e.target.value;
+        const selectedCategory = e.target.value; 
         setCategory(selectedCategory); 
-        const searchProduct = pizzas.filter((product) => {
+        const searchProduct = products.filter((product) => {
             return product.category.toLowerCase().includes(selectedCategory.toLowerCase());
         });
-        setpizzasfill(searchProduct);
+        setProductsfill(searchProduct);
     };
 
     return (
-        <div className="flex flex-col items-center justify-center gap-10">
-            <section className="h-1/2 w-full flex items-center justify-center gap-10 ">
-                <article>
-                    <h1>Buscador de productos por nombre</h1>
+        <div className="min-h-full flex flex-col items-center justify-center gap-10 p-4 bg-gray-900 text-white">
+            <section className="w-full flex flex-col md:flex-row items-center justify-center gap-10 mb-6">
+                <article className="flex flex-col items-center">
+                    <h1 className="text-xl font-semibold mb-2">Buscador de productos por nombre</h1>
                     <input
                         type="text"
                         placeholder="Buscar productos"
                         onChange={handleSearch}
-                        value={search} 
+                        value={search}
+                        className="p-2 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                 </article>
-                <article>
-                    <h1>Buscador de productos por categoría</h1>
-                    <select name="" id="" onChange={handleCategory} value={category}>
-                        <option value="">Seleccionar categoría</option> 
-                        <option value="Pizza">Pizza</option>
-                        <option value="Bebida">Bebida</option>
-                        <option value="Empanada">Empanada</option>
-                        <option value="Lomito">Lomito</option>
-                        <option value="Hamburguesa">Hamburguesa</option>
+                <article className="flex flex-col items-center">
+                    <h1 className="text-xl font-semibold mb-2">Buscador de productos por categoría</h1>
+                    <select 
+                        onChange={handleCategory} 
+                        value={category}
+                        className="p-2 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+                    >
+                        <option value="">Seleccionar categoría</option>
+                        <option value="pizzas">Pizza</option>
+                        <option value="pizzas rellenas">Pizza rellena</option>
+                        <option value="empanadas">Empanada</option>
+                        <option value="lomos">Lomos</option>
+                        <option value="hamburgesas">Hamburguesa</option>
+                        <option value="fritos">Fritos</option>
                     </select>
                 </article>
             </section>
-            <h1>Productos encontrados</h1>
-            <div className="h-1/2 w-1/2 flex items-center justify-center flex-wrap gap-10 ">
-                {pizzasfill.map((product) => (
-                    <div key={product.id}>
-                        <h2>{product.name}</h2>
-                        <h3>{product.price}</h3>
-                        <img src={product.image} alt="No Found image" className="h-24 w-24" />
-                        <Link to={`/products/${product.id}`}>Ver detalle</Link>
-
+            <h1 className="text-2xl font-bold mb-4">Productos encontrados</h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full md:w-3/4">
+                {productsfill.map((product) => (
+                    <div key={product.id} className="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105 h-48">
+                        <h2 className="text-lg font-semibold truncate">{product.name}</h2>
+                        <h3 className="text-md font-medium text-gray-400">${product.price}</h3>
+                        <img src={product.image} alt="No Found image" className="h-24 w-24 object-cover rounded-md my-2" />
+                        <Link 
+                            to={`/products/${product.id}`}
+                            className="mt-2 text-blue-500 hover:text-blue-300 underline"
+                        >
+                            Ver detalle
+                        </Link>
                     </div>
                 ))}
             </div>
