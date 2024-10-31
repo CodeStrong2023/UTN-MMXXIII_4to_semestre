@@ -1,7 +1,7 @@
 export const pizzas = [
     {
         id: 1,
-        name: 'Pizza 1', 
+        name: 'MUZZARELLA', 
         image: '/src/assets/images/pizzeria_56.jpg',
         price: 10.99,
     },
