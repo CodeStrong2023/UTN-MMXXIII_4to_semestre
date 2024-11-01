@@ -20,13 +20,15 @@ const ContactForm = () => {
                 <div className="border-b-2 w-full">
                     <input type="email" placeholder="Email" {...register('email',{
                         required:true,
-                        validate: isEmail
+                        validate: isEmail,
+                       
                     })} />
                 </div>
             </div>
             <div>
                 <textarea name="" id="" cols="30" rows="5" className="border-b-2 w-full" {...register('message',{
                     required:true,
+                    
                 })}></textarea>
             </div>
             <div className="flex justify-end">
