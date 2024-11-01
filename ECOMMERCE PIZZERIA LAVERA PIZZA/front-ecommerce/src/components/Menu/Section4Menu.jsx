@@ -3,8 +3,9 @@ import fondo from "../../assets/images/pizzeria_77.jpg";
 export const Section4Menu = () => {
   return (
     <div className="w-screen max-w-none h-full  text-white items-center justify-center  ">
+      <div className="absolute  w-screen max-w-none h-full bg-black -z-10 opacity-70"></div>
       <img
-        src={fondo} alt="" className="absolute  w-screen max-w-none h-full -z-10"/>
+        src={fondo} alt="" className="absolute  w-screen max-w-none h-full -z-20"/>
       <div className="h-[calc(100vh-100px)] flex flex-col items-center justify-center">
         <span className="font-thin text-7xl h-40">RESERVA TU MESA</span>
         <p className="font-bold text-3xl text-yellow-400 h-16">(260)-4811711</p>
