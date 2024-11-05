@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { loadUserFromLocalStorage, saveUserToLocalStorage } from "../utils/localStorage";
 
-
 const initialState = loadUserFromLocalStorage() || {
     user: "invitado",
     userName: "invitado",
@@ -16,9 +15,9 @@ export const userSlice = createSlice({
         addUser: (state, action) => {
             console.log("Esto es el action", action);
 
-            state.user = action.payload.name || "invitado"; 
-            state.userName = action.payload.userName || action.payload.name || "invitado";
-            state.userLoading = true; 
+            state.user = action.payload.nombre || "invitado"; 
+            state.userName = action.payload.userName || action.payload.nombre || "invitado";
+            state.userLoading = false; 
             state.email = action.payload.email || "invitado@gmail.com";
 
             saveUserToLocalStorage({
