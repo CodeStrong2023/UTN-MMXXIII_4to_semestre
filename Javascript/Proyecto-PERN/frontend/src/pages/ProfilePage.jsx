@@ -1,8 +1,11 @@
-
+import {useAuth} from "../context/useAuth"
 
 function ProfilePage() {
+  const {user} = useAuth();
   return (
-    <div>ProfilePage</div>
+    <div>
+      {JSON.stringify(user, null, 2)}
+    </div>
   )
 }
 
