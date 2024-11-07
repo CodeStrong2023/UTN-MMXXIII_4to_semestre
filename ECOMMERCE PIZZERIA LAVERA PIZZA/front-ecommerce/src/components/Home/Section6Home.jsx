@@ -12,10 +12,10 @@ const Section6Home = () => {
                 </div>
                 <div className=' flex flex-col gap-5 w-72'>
                     <button className='bg-white text-black w-full text-center pt-2 pb-2'>
-                        order now
+                        ordena online
                     </button>
                     <button className='bg-flu-Primary-Orange text-white w-full text-center pt-2 pb-2'>
-                        Book A Table
+                        contactanos
                     </button>
                 </div>
 

@@ -12,6 +12,8 @@ import CartPage from './pages/CartPage';
 import {store} from './redux/store';
 import { syncCart } from './redux/cartSlice';
 import { syncUser } from './redux/userSlice';
+import Succes from './pages/Succes';
+import { Fail } from './pages/Fail';
 
 function App() {
   const setupStorageListener = () => {
@@ -40,6 +42,8 @@ function App() {
         <Route path='/cart' element={<CartPage />} />
         <Route path='/login' element={<IniciarSesion />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/success' element={<Succes />} />
+        <Route path='/fail' element={<Fail />} />
         <Route path='*' element={<h1>Not Found</h1>} />
 
       </Routes>

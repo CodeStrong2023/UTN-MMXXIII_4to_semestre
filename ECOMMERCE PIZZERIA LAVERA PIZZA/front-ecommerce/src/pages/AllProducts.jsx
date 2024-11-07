@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { productsService } from "../api/axios/services";
 import fondo from "../assets/images/pizzeria_76.jpg";
 
+
 const AllProducts = () => {
     const [productsfill, setProductsfill] = useState([]);
     const [search, setSearch] = useState(""); 
@@ -37,6 +38,7 @@ const AllProducts = () => {
     };
 
     return (
+
         <div className="min-h-screen top-10 flex flex-col items-center justify-center gap-10 p-4 text-white">
             <img src={fondo} alt="" className="absolute w-screen h-full -z-10 object-cover"/>
             <section className="w-full h-auto flex flex-col md:flex-row items-center justify-center gap-10 mb-6">

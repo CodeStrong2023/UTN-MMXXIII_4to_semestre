@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom'
 const Section2Home = () => {
   const navigate = useNavigate()
   const seguirComprando = () => {
-    navigate('/allproducts')
+    navigate('/menu')
   }
 
     return (
