@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Pizzeria Lavera - Reservas</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="/js/reservas/get_reservas.js"></script>
+    <script type="text/javascript" src="/js/reservas/update_reservas.js"></script>
+    <script type="text/javascript" src="/js/reservas/delete_reservas.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary ">
+    <div class="container-fluid">
+        <a class="navbar-brand active" aria-current="page" href="index.html">Pizzeria Lavera Pizza</a>
+        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0" id="navegacion">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="get_products.html">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="get_orders.html">Pedidos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="get_customers.html">Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="get_reservations.html">Reservas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.html">Cerrar Sesión</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container my-3">
+    <div id="div_reservas_table">
+        <div class="d-flex align-items-center">
+            <h1>Listado de Reservas</h1>
+            <a class="mx-5 btn btn-success" id="add_reserva" href="post_reservations.html">Agregar Reserva</a>
+        </div>
+        <div class="row col-md-6 table-responsive">
+            <table id="reservaTable" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Paciente</th>
+                    <th>Odontologo</th>
+                    <th>Fecha</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody id="reservaTableBody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6" style="display: none;
+											background-color:#e6fffa; padding:10px; border-radius:3px"
+             id="div_reserva_updating">
+            <form id="update_reserva_form">
+                <div class="form-group">
+                    <label >Id:</label>
+                    <input type="text" class="form-control" id="reserva_id" readonly>
+                </div>
+                <div class="form-group">
+                    <label >Paciente:</label>
+                    <input type="text" class="form-control" placeholder="Cedula del paciente" id="paciente">
+                </div>
+                <div class="form-group">
+                    <label >Odontologo:</label>
+                    <input type="text" class="form-control" placeholder="Matricula del odontologo" id="odontologo">
+                </div>
+                <div class="form-group">
+                    <label >Fecha:</label>
+                    <input type="date" class="form-control" placeholder="fecha" id="fecha">
+                </div>
+
+
+                <button type="submit" class="btn btn-primary">Modificar</button>
+            </form>
+
+        </div>
+    </div>
+    <div id="response" style="display:none; margin:10px">
+    </div>
+    <hr>
+</div>
+<footer class="py-3 my-4">
+    <p class="text-center text-body-secondary border-top m-0">Proyecto integrador final </p>
+    <p class="text-center text-body-secondary m-0">Desarrollado por Ponce María Elena</p>
+    <p class="text-center text-body-secondary m-0 fw-bold"></p>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="js/users/gestion.js"></script>
+</body>
+</html>

@@ -4,35 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7febb2c-7bde-47ab-8f00-50f76c088343" name="Changes" comment="" />
+    <list default="true" id="93b05452-36de-44c8-9806-8cad7c978b38" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/controller/CategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/controller/CategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/entity/Additive.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/entity/Additive.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/entity/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/entity/Address.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/entity/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/entity/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/entity/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/entity/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/entity/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/entity/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/entity/Ingredient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/entity/Ingredient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/entity/PreferenceRequest$PreferenceItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/entity/PreferenceRequest$PreferenceItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/entity/PreferenceRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/entity/PreferenceRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/entity/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/entity/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/entity/Reservation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/entity/Reservation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/exception/Advisor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/exception/Advisor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/exception/GlobalException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/exception/GlobalException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/security/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pizzerialavera/e_commerce/service/UserService.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence">{}</component>
-  <component name="KubernetesApiProvider">{
-  &quot;isMigrated&quot;: true
-}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4
-}</component>
-  <component name="ProjectId" id="2mObiyA4Ya1jhNH0hIdXZoALr3L" />
+  <component name="ProjectId" id="2oM54CwBPMBAk4x8SKgQfvfysBj" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -44,29 +50,31 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.ECommerceApplication.executor": "Run",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ponce/Documents/Programacion/UTN/TECNICATURA EN PROGRAMACION/ECOMMERCE PIZZERIA LAVERA PIZZA/Backend/e-commerce/src",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "spring.boot",
+    "spring.configuration.checksum": "c59bda8712cf0bdbaac638d497d3f39b",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ponce\Documents\Programacion\UTN\TECNICATURA EN PROGRAMACION\ECOMMERCE PIZZERIA LAVERA PIZZA\Backend\e-commerce\src" />
-      <recent name="C:\Users\ponce\Documents\Programacion\UTN\TECNICATURA EN PROGRAMACION\ECOMMERCE PIZZERIA LAVERA PIZZA\Backend\e-commerce\src\main\resources" />
-      <recent name="C:\Users\ponce\Documents\Programacion\UTN\TECNICATURA EN PROGRAMACION\ECOMMERCE PIZZERIA LAVERA PIZZA\Backend\e-commerce\src\main\java\com\pizzerialavera\e_commerce" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ponce\Documents\Programacion\UTN\TECNICATURA EN PROGRAMACION\ECOMMERCE PIZZERIA LAVERA PIZZA\Backend\e-commerce\src\main\resources" />
-    </key>
-  </component>
   <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="e-commerce (1)" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="e-commerce (1)" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ECommerceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="e-commerce" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.pizzerialavera.e_commerce.ECommerceApplication" />
@@ -75,24 +83,18 @@
       </method>
     </configuration>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f7febb2c-7bde-47ab-8f00-50f76c088343" name="Changes" comment="" />
-      <created>1726950705048</created>
+      <changelist id="93b05452-36de-44c8-9806-8cad7c978b38" name="Changes" comment="" />
+      <created>1730666419107</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1726950705048</updated>
-      <workItem from="1726950706514" duration="13205000" />
-      <workItem from="1727009758410" duration="9930000" />
+      <updated>1730666419107</updated>
+      <workItem from="1730666422413" duration="60000" />
+      <workItem from="1730666503148" duration="31000" />
+      <workItem from="1730666575817" duration="1566000" />
+      <workItem from="1730829009156" duration="1779000" />
     </task>
     <servers />
   </component>
