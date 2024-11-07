@@ -9,6 +9,7 @@ export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
     const [isAuth, setIsAuth] = useState(false);
     const [errors, setErrors] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     const signin = async (data) => {
         try {
@@ -48,13 +49,16 @@ export function AuthProvider({ children }) {
     }
 
     useEffect(() => {
+        setLoading(true);
         if (Cookie.get("token")) {
             axios.get("/profile").then((res) => {
                 setUser(res.data);
                 setIsAuth(true);
+                setLoading(false);
             }).catch((error) =>{
                 setUser(null);
                 setIsAuth(false);
+                setLoading(false);
                 console.log(error);
             });
         }
@@ -68,7 +72,8 @@ export function AuthProvider({ children }) {
             signup,
             setUser,
             signin,
-            signout
+            signout,
+            loading
         }}>
             {children}
         </AuthContext.Provider>

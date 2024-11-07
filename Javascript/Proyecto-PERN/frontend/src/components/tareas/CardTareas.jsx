@@ -1,8 +1,12 @@
 /* eslint-disable react/prop-types */
 import { Button, Card } from "../ui";
-import { eliminarTareaRequest } from "../../api/tareas.api";
+import { useTareas } from "../../context/TareasContext";
+import { useNavigate } from "react-router-dom";
 
 export function CardTareas({ tarea }) {
+  const {eliminarTarea} = useTareas();
+  const navigate = useNavigate();
+
   return (
     <Card key={tarea.id} className="py-4 px-7">
       <div>
@@ -10,13 +14,14 @@ export function CardTareas({ tarea }) {
         <p>{tarea.descripcion}</p>
       </div>
       <div className="flex justify-end gap-x-2">
-        <Button>editar</Button>
+        <Button
+        onClick={() => navigate(`/tareas/${tarea.id}/editar`)}
+        >editar</Button>
         <Button
           className="bg-red-500 hover:bg-red-600"
           onClick={async() => {
             if (window.confirm("¿Estas seguro de elimninar esta tarea?")) {
-                const res = await eliminarTareaRequest(tarea.id);
-                console.log(res);
+                  await eliminarTarea(tarea.id);
                 }
             }}
         >
