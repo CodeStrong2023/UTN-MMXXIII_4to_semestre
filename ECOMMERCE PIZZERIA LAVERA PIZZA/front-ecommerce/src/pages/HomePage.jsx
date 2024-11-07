@@ -8,8 +8,6 @@ import Section6Home from '../components/Home/Section6Home'
 import {productsService} from '../api/axios/services'
 
 export const HomePage = () => {
-
-
   return (
     <div className='w-[100%] h-full'>
       <Section1Home />

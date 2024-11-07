@@ -8,6 +8,7 @@ import { Payment } from '@mercadopago/sdk-react';
 import axiosconfig from '../api/axios/axios';
 import { initMercadoPago } from '@mercadopago/sdk-react';
 
+
 const CartPage = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();

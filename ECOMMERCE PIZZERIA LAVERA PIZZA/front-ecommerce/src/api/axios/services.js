@@ -24,8 +24,6 @@ export const productsService = {
     },
 }
 
-
-
 export const userService = {
     register: async (user) => {
         try {

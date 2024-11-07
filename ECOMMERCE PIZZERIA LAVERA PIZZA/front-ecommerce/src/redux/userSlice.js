@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { loadUserFromLocalStorage, saveUserToLocalStorage } from "../utils/localStorage";
 
+
 const initialState = loadUserFromLocalStorage() || {
     user: "invitado",
     userName: "invitado",
