@@ -40,7 +40,7 @@ function App() {
         <Route path='/cart' element={<CartPage />} />
         <Route path='/login' element={<IniciarSesion />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/succes' element={<Succes />} />
+        <Route path='/success' element={<Succes />} />
         <Route path='/fail' element={<Fail />} />
         <Route path='*' element={<h1>Not Found</h1>} />
 
