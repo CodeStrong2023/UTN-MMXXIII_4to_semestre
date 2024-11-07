@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
-import axios from "axios";
+import { useEffect, useState } from "react";
 import { AuthContext } from "./AuthContext";
+import Cookie from  "js-cookie";
+import axios from "../api/axios";
+
 
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
@@ -9,20 +11,54 @@ export function AuthProvider({ children }) {
     const [errors, setErrors] = useState(null);
 
     const signin = async (data) => {
-        const res = await axios.post("http://localhost:3000/api/signin", data, {
-            withCredentials: true,
-        });
-        console.log(res.data);
-        setUser(res.data);
+        try {
+            const res = await axios.post("/signin", data);
+                setUser(res.data);
+                setIsAuth(true);
+            return res.data;
+        } catch (error) {
+            console.log(error)
+            if(Array.isArray(error.response.data)){
+                return setErrors(error.response.data)
+            }
+            setErrors([error.response.data.message]);
+        }
     };
 
     const signup = async (data) => {
-        const res = await axios.post("http://localhost:3000/api/signup", data, {
-            withCredentials: true,
-        });
-        console.log(res.data);
-        setUser(res.data);
+        try {
+            const res = await axios.post("/signup", data);
+                setUser(res.data);
+                setIsAuth(true);
+            return res.data;
+        } catch (error) {
+            console.log(error)
+            if(Array.isArray(error.response.data)){
+                return setErrors(error.response.data)
+            }
+            setErrors([error.response.data.message]);
+        }
     };
+
+    const  signout = async () => {
+        const res = await axios.post('/signout');
+            setUser(null);
+            setIsAuth(false);
+        return res.data;
+    }
+
+    useEffect(() => {
+        if (Cookie.get("token")) {
+            axios.get("/profile").then((res) => {
+                setUser(res.data);
+                setIsAuth(true);
+            }).catch((error) =>{
+                setUser(null);
+                setIsAuth(false);
+                console.log(error);
+            });
+        }
+    }, []);
 
     return (
         <AuthContext.Provider value={{
@@ -32,8 +68,7 @@ export function AuthProvider({ children }) {
             signup,
             setUser,
             signin,
-            setIsAuth,
-            setErrors,
+            signout
         }}>
             {children}
         </AuthContext.Provider>

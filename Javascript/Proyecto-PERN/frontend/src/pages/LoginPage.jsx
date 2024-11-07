@@ -1,22 +1,30 @@
+/* eslint-disable react/jsx-key */
 import { Link, useNavigate } from 'react-router-dom'
-import {Card, Input, Button, Label} from '../components/ui'
+import {Card, Input, Button, Label, Container} from '../components/ui'
 import { useForm} from  'react-hook-form';
 import { useAuth} from '../context/useAuth';
 
 
 function LoginPage() {
   const { register,  handleSubmit, } = useForm()
-  const { signin } = useAuth();
+  const { signin, errors } = useAuth();
   const navigate = useNavigate();
   const onSubmit = handleSubmit(async(data) => {
-    await signin(data);
-    navigate("/perfil");
+    const user = await signin(data);
+    if (user) {
+      navigate("/perfil");
+    }
   });
 
 
   return (
-    <div className='h-[calc(100vh-64px)] flex items-center justify-center'>
+    <Container className=' h-[calc(100vh-10rem)] flex items-center justify-center'>
       <Card>
+        {
+          errors && errors.map((error) => (
+           <p className='text-red-500 text-center mb-2'>{error}</p>
+          ))
+        }
         <h3 className='text-2xl font-bold my-2 text-center'>Inicia sesión</h3>
 
         <form onSubmit={onSubmit}>
@@ -35,7 +43,7 @@ function LoginPage() {
           <Link to='/register'>Registrate</Link>
         </div>
       </Card>
-    </div>
+    </Container>
   )
 }
 
