@@ -23,10 +23,10 @@ export const saveCartToLocalStorage = (cart) => {
 export const loadUserFromLocalStorage = () => {
     try {
         const serializedUser = localStorage.getItem("user");
-        return serializedUser ? JSON.parse(serializedUser) : null; // Cambiar a null para evitar problemas de asignación
+        return serializedUser ? JSON.parse(serializedUser) : null; 
     } catch (error) {
         console.error("Error loading user from localStorage:", error);
-        return null; // Cambiar a null en caso de error
+        return null; 
     }
 };
 

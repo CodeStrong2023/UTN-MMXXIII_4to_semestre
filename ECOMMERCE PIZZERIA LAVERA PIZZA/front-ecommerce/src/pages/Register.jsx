@@ -1,50 +1,53 @@
-
 import { useForm } from 'react-hook-form';
 import { isEmail } from 'validator';
 import { useNavigate } from 'react-router-dom';
+import { userService } from '../api/axios/services';
 
 const Register = () => {
     const { register, handleSubmit, formState: { errors }, watch } = useForm();
     const password = watch('password');
     const navigate = useNavigate();
 
-    //modelo contraseña laLA88**
-
-    const customSubmit = (data) => {
-        console.log(data);
-
-        // Aquí deberías hacer la petición a tu API
-
-        navigate('/login')
+    const customSubmit = async (data) => {
+        try {
+            await userService.register(data);
+            navigate('/login');
+        } catch (error) {
+            console.error("Error al registrar usuario:", error);
+            alert("Hubo un error al registrar el usuario, por favor inténtalo nuevamente.");
+        }
     };
 
     return (
         <div className='h-full w-full flex flex-col items-center justify-center'>
             <form onSubmit={handleSubmit(customSubmit)} className='flex flex-col gap-6'>
                 <input 
-                    type="text" // Cambiado a "text"
-                    placeholder="Name" 
-                    {...register('name', { required: true })} 
+                    type="text"
+                    placeholder="Nombre"
+                    {...register('nombre', { required: "El nombre es obligatorio" })}
                 />
-                <input 
-                    type="text" 
-                    placeholder="Username" 
-                    {...register('Username', { required: true })} 
-                />
+                {errors.nombre && <p>{errors.nombre.message}</p>}
 
                 <input 
-                    type="email" 
-                    placeholder="Email" 
+                    type="text"
+                    placeholder="Username"
+                    {...register('userName', { required: "El username es obligatorio" })}
+                />
+                {errors.userName && <p>{errors.userName.message}</p>}
+
+                <input 
+                    type="email"
+                    placeholder="Email"
                     {...register('email', {
-                        required: true,
+                        required: "El email es obligatorio",
                         validate: isEmail
-                    })} 
+                    })}
                 />
-
+                {errors.email && <p>{errors.email.message}</p>}
 
                 <input 
-                    type="password" 
-                    placeholder="Contraseña" 
+                    type="password"
+                    placeholder="Contraseña"
                     {...register('password', {
                         required: "La contraseña es requerida",
                         minLength: {
@@ -55,7 +58,7 @@ const Register = () => {
                             value: /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
                             message: "La contraseña debe tener al menos una mayúscula, un número y un carácter especial"
                         }
-                    })} 
+                    })}
                 />
                 {errors.password && <p>{errors.password.message}</p>}
 

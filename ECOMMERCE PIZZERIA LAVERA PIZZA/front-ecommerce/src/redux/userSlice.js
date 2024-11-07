@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { loadUserFromLocalStorage, saveUserToLocalStorage } from "../utils/localStorage";
 
-// Estado inicial con verificación en localStorage
 const initialState = loadUserFromLocalStorage() || {
     user: "invitado",
     userName: "invitado",
@@ -16,13 +15,11 @@ export const userSlice = createSlice({
         addUser: (state, action) => {
             console.log("Esto es el action", action);
 
-            // Asignamos propiedades específicas al estado
-            state.user = action.payload.name || "invitado"; 
-            state.userName = action.payload.userName || action.payload.name || "invitado";
-            state.userLoading = true; 
+            state.user = action.payload.nombre || "invitado"; 
+            state.userName = action.payload.userName || action.payload.nombre || "invitado";
+            state.userLoading = false; 
             state.email = action.payload.email || "invitado@gmail.com";
 
-            // Guardamos el estado completo en localStorage
             saveUserToLocalStorage({
                 user: state.user,
                 userName: state.userName,
