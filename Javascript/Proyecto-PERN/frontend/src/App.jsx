@@ -1,12 +1,13 @@
 import Navbar from "./components/navbar/Navbar";
-import { Container } from "./components/ui";
+import { Container } from "./components/ui/Container";
 
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
-import { useAuth } from "./context/useAuth";
+import { useAuth } from "./context/AuthContext";
 import { TareasProvider } from "./context/TareasContext";
 
 import { Routes, Route, Outlet } from "react-router-dom";
+
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import LoginPage from "./pages/LoginPage";
@@ -18,18 +19,19 @@ import NotFound from "./pages/NotFound";
 
 function App() {
   const { isAuth, loading } = useAuth();
-  
+
   if (loading) {
-    return <div>Cargando...</div>;
+      return <h1>Cargando...</h1>;
   }
+
 
   return (
     <>
       <Navbar />
-      <Container className=" py-5">
+      <Container className="py-5">
         <Routes>
           <Route
-            element={<ProtectedRoute isAllowed={!isAuth} redirecTo="/tareas" />}
+            element={<ProtectedRoute isAllowed={!isAuth} redirecTo="tareas" />}
           >
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />

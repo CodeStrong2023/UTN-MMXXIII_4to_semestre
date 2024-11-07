@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
 import { createContext, useState, useContext } from "react";
 import {
-  crearTareaRequest,
+  listarTareasRequest,
   eliminarTareaRequest,
-  obtenerTareasRequest,
+  crearTareaRequest,
+  actualizarTareaRequest,
+  listarTareaRequest
 } from "../api/tareas.api";
 
 const TareasContext = createContext();
@@ -14,6 +16,7 @@ export const useTareas = () => {
   if (!context) {
     throw new Error("useTareas debe estar dentro del proveedor TareasProvider");
   }
+
   return context;
 };
 
@@ -21,16 +24,22 @@ export const TareasProvider = ({ children }) => {
   const [tareas, setTareas] = useState([]);
   const [errors, setError] = useState([]);
 
-  const listarTareas = async () => {
-    const res = await obtenerTareasRequest();
+  const cargarTareas = async () => {
+    const res = await listarTareasRequest();
     setTareas(res.data);
   };
 
-  const crearTarea = async () => {
+  const cargarTarea = async (id, tarea) => {
+    const res = await listarTareaRequest(id, tarea);
+    return res.data;
+  };
+
+
+  const crearTarea = async (tarea) => {
     try {
-      const res = await crearTareaRequest(tareas);
+      const res = await crearTareaRequest(tarea);
       setTareas([...tareas, res.data]);
-      return res.tarea;
+      return res.data;
     } catch (error) {
       if (error.response) {
         setError([error.response.data.message]);
@@ -44,13 +53,28 @@ export const TareasProvider = ({ children }) => {
       setTareas(tareas.filter((tarea) => tarea.id !== id));
     }
   };
+
+  const editarTarea = async (id, tarea) => {
+    try {
+      const res = await actualizarTareaRequest(id, tarea);
+      return res.data;
+    } catch (error) {
+      if (error.response) {
+        setError([error.response.data.message]);
+      }
+    }
+    }
+
   return (
     <TareasContext.Provider
       value={{
         tareas,
-        listarTareas,
+        cargarTareas,
         eliminarTarea,
-        crearTarea
+        crearTarea,
+        cargarTarea,
+        errors,
+        editarTarea,
       }}
     >
       {children}

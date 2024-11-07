@@ -1,14 +1,11 @@
 import axios from "./axios";
 
-export const crearTareaRequest = async(tarea) => {
-    try {
-        const respuesta = await axios.post("/tareas", tarea);
-        return respuesta.tarea
-    } catch (error) {
-        console.log(error);
-    } 
-}
+export const crearTareaRequest =  (tarea) => axios.post("/tareas", tarea)
 
-export const obtenerTareasRequest = async() => axios.get("/tareas");
+export const listarTareasRequest =  () => axios.get("/tareas")
 
-export const eliminarTareaRequest = async(id) => axios.delete(`/tareas/${id}`)
+export const eliminarTareaRequest = (id) => axios.delete(`/tareas/${id}`)
+
+export const listarTareaRequest = (id) => axios.get(`/tareas/${id}`)
+
+export const actualizarTareaRequest = (id, tarea) => axios.put(`/tareas/${id}`, tarea)
