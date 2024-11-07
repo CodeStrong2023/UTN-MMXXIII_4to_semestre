@@ -19,6 +19,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 
 app.get("/", (req, res) => res.json({ message: "Bienvenidos a proyecto PERN - UTN-MMXXIII"}));
+app.get("/api/ping", async(req, res) => {
+    const result = await pool.query("SELECT NOW()");
+    res.json(result.rows[0]);
+  });
 app.use('/api',tareasRoutes);
 app.use('/api', authRoutes);
 

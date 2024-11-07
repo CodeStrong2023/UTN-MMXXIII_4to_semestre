@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 
-export function Label({children, htmlFor}) {
+export function Label({ children, htmlFor}) {
   return (
-    <label className="block text-gray-400 text-sm font-medium mb-2" htmlFor={htmlFor}>
-        {children}
+    <label className='block text-gray-400 text-sm font-medium mb-2' htmlFor={htmlFor}>
+      {children}
     </label>
   )
 }
