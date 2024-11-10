@@ -15,7 +15,7 @@ export const Section1Home = () => {
       <section className="h-2/3 w-2/4 flex flex-col gap-9 items-start">
         <div>
           <h1 className="2xl:text-9xl transform rotate-[-14deg] p">La Vera</h1>
-          <h1 className="2xl:text-9xl transform rotate-[-14deg] p">Pizzeria</h1>
+          <h1 className="2xl:text-9xl transform rotate-[-14deg] p">Pizza</h1>
         </div>
         <p className="text-sm 2xl:text-base text-justify w-2/4 pt-14">
           Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor
@@ -24,7 +24,7 @@ export const Section1Home = () => {
           Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris b
         </p>
         <div onClick={seguirComprando}>
-          <MainButon text="Order online" />
+          <MainButon text="Compra en línea" />
         </div>
       </section>
     </div>

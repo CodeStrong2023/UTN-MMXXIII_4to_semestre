@@ -41,7 +41,7 @@ const DetaillPage = () => {
     };
 
     const seguirComprando = () => {
-        navigate('/allproducts');
+        navigate('/menu');
     };
 
     return (

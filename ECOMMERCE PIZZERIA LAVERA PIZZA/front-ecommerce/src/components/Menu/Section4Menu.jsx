@@ -1,4 +1,5 @@
 import fondo from "../../assets/images/pizzeria_77.jpg";
+import { Link } from "react-router-dom";
 
 export const Section4Menu = () => {
   return (
@@ -17,12 +18,12 @@ export const Section4Menu = () => {
           (260)-4811711
         </p>
         <div className="flex flex-col sm:flex-row sm:space-x-4 w-2/4">
-          <button className="h-11 w-5/4 sm:w-3/4 bg-white text-black hover:bg-gray-300 font-semibold flex items-center justify-center m-3">
+          <Link to="/menu"className="h-11 w-5/4 sm:w-3/4 bg-white text-black hover:bg-gray-300 font-semibold flex items-center justify-center m-3">
             Pedí ahora
-          </button>
-          <button className="h-11 w-5/4 sm:w-3/4 bg-yellow-600 text-white hover:bg-yellow-500 font-semibold flex items-center justify-center m-3">
+          </Link>
+          <Link to='/contact' className="h-11 w-5/4 sm:w-3/4 bg-yellow-600 text-white hover:bg-yellow-500 font-semibold flex items-center justify-center m-3">
             Escribinos
-          </button>
+          </Link>
         </div>
       </div>
     </div>

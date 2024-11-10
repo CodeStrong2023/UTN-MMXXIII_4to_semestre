@@ -22,7 +22,7 @@ const Section2Home = () => {
               <CardMenu key={pizza.id} product={pizza} />
             ))}
             <div onClick={seguirComprando}>
-              <MainButon text='Full Menu' />
+              <MainButon text='Promociones' />
             </div>
             
           </section>

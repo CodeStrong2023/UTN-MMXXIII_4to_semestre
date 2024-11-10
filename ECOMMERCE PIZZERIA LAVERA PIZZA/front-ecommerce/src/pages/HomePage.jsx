@@ -12,7 +12,6 @@ export const HomePage = () => {
     <div className='w-[100%] h-full'>
       <Section1Home />
       <Section2Home />
-
       <Section4Home />
       <Section5Home />
       <Section6Home />

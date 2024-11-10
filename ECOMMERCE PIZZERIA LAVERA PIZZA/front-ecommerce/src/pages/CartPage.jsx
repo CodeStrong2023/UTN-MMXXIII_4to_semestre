@@ -143,7 +143,7 @@ const CartPage = () => {
                             Vaciar carrito
                         </button>
                         <button
-                            onClick={() => navigate('/allProducts')}
+                            onClick={() => navigate('/menu')}
                             className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 rounded transition duration-300 ease-in-out'>
                             Seguir comprando
                         </button>
