@@ -1,0 +1,132 @@
+
+.container {
+	width: 60%;
+	height: 65vh;
+	display: flex;
+	align-self: center;
+	padding: 0 20px;
+}
+.character-container {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	position: relative;
+	overflow: hidden;
+    display: flex;
+}
+
+.character {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.character h2 {
+	width: 100%;
+	text-align: center;
+	margin: 8px 0;
+}
+
+.character img {
+	width: 100%;
+	height: 70%;
+	object-fit: contain;
+	z-index: 2;
+    
+}
+
+
+.character-platform {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	z-index: -1;
+	background-image: url("../assets/ui/pngtree-virtual-hologram-teleport-hud-digital-illustration-png-image_11432407.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+	transform: translate(0, 12%);
+	opacity: 0.5;
+}
+
+.character-container:hover .character-platform {
+	opacity: 1;
+}
+.character-container:hover .character > h2{
+	color: #ffffff;
+}
+
+.thumbnail-container {
+	border: 3px solid #35809c;
+	border-radius: 4px;
+	width: 80px;
+	min-width: 80px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	position: relative;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+.thumbnail-container::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+.thumbnail-container::-webkit-scrollbar-thumb {
+	background: linear-gradient(to bottom right, #35809c 0%, #1a56ff 100%);
+	border-radius: 5px;
+}
+
+.thumbnail-container::-webkit-scrollbar-track {
+	background-color: aliceblue;
+	border: 1px solid aliceblue;
+}
+.thumbnail-container::-webkit-scrollbar-button {
+	background-color: #35809c;
+	border-radius: 5px;
+	display: none;
+}
+.thumbnail-container::-webkit-scrollbar-button:hover {
+	background-color: aliceblue;
+	
+}
+
+.thumbnail {
+	width: 100%;
+	height: 80px;
+	object-fit: cover;
+	box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.2);
+	border: 1px solid #35809c;
+	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+	-webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.thumbnail:hover,
+.thumbnail:focus, .active-thumbnail {
+	filter: grayscale(0%);
+	filter: gray;
+	-webkit-filter: grayscale(0%);
+	filter: none;
+	transition: 0.5s ease;
+}
+
+
+.active-thumbnail {
+    border: 2px solid white; /* Borde blanco para el thumbnail activo */
+}
+
+.character >h2 {
+	color: #b2ffff;
+}
+

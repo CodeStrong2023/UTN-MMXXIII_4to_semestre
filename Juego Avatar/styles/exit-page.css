@@ -1,0 +1,17 @@
+#exit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.exit {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px 0;
+    opacity: 0.8;
+}
+
+.exit:hover{
+    opacity: 1;
+}

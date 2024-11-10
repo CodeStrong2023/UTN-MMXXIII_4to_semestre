@@ -1,0 +1,110 @@
+/* Estilo para el contenedor de la tabla */
+
+#score >.flow-container {
+    align-self: flex-start;
+    align-items: center;
+    padding: 20px 0;
+    padding-right: 10vw;
+    height: 100vh;
+}
+
+.score-container {
+    margin-top: 20px;
+    border: 3px solid var(--light-color);
+    width: 70%;
+    height: 65vh;
+    border-radius: 40px;
+    overflow: scroll; /* Asegura que el contenido no se desborde */
+    scrollbar-width: none; /* Grosor de la barra de desplazamiento */
+}
+
+/* Estilo para la tabla */
+.score-table {
+    width: 100%;
+    border-collapse: collapse; /* Elimina los espacios entre bordes de celdas */
+    margin: 0 auto; /* Centra la tabla */
+}
+
+/* Estilo para los encabezados de la tabla */
+.score-th-header {
+    background-color: var(--light-color); /* Color de fondo del encabezado */
+    opacity: 0.8;
+    color: var(--dark-color); /* Color del texto */
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #ddd; /* Línea debajo del encabezado */
+}
+
+.score-th-header:first-child {
+    border-top-left-radius: 37px;
+}
+
+.score-th-header:last-child {
+    border-top-right-radius: 37px;
+}
+
+/* Estilo para las filas de la tabla */
+.score-tr-row {
+    text-align: center;
+    height: 50px; /* Asegúrate de que la altura sea suficiente para ver la alineación */
+}
+
+/* Estilo para las celdas de la tabla */
+th{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    width: 100%;
+    justify-content: center;
+}
+tr{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+td{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+/* Estilo específico para la celda de "Player" */
+.score-player-cell {
+    font-weight: bold;
+    color: white;
+    font-size: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) ; /* Negrita para destacar */
+}
+
+/* Estilo para la celda de "Enemy" */
+.score-enemy-cell {
+    color: red;
+    font-weight: bold;
+    font-size: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) /* Color de texto ligeramente más claro */
+}
+
+/* Estilo para la celda de "Result" */
+.score-result-cell { /* Color de fondo */
+    color: white;               /* Color de texto */
+    font-weight: bold;         /* Negrita */
+    text-align: center;        /* Centrar texto */
+    padding: 10px;             /* Espaciado interno */
+    border-radius: 4px; 
+          
+}
+
+/* Estilo para la celda de "Datetime" */
+.score-datetime-cell {
+    font-weight: bold;
+    color: var(--light-color);
+    font-size: 0.8rem;
+}
+
+/* Estilo para la celda de "Moves" */
+.score-moves-cell {
+    font-weight: bold;
+    color: var(--light-color);
+}

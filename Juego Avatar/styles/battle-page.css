@@ -1,0 +1,349 @@
+:root {
+	--padding-top: calc(10 / 17 * 100%);
+}
+
+.flow-container {
+	height: var(--padding-top);
+}
+.flow-container > #battle > .battle-arena {
+	background-image: url("../assets/background/arena.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	image-rendering: crisp-edges;
+	width: 100%;
+	padding-top: var(--padding-top); /* Relación 17:10 */
+	position: relative;
+}
+
+.player-container,
+.enemy-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	position: absolute;
+}
+
+.player-container {
+	height: 40%;
+	bottom: 0;
+}
+
+.enemy-container {
+	height: 60%;
+	top: 0; /* Asegura que se mantenga en la parte superior del contenedor */
+	padding-top: 8px;
+}
+
+.enemy-img {
+	height: 70%;
+	width: 60%;
+	background-position: left;
+	image-rendering: crisp-edges;
+	background-repeat: no-repeat;
+	background-size: contain;
+	align-self: flex-end;
+	filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
+}
+
+.player-img {
+	height: 100%;
+	width: 50%;
+	background-position: center;
+	image-rendering: crisp-edges;
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: relative;
+}
+
+.enemy-dialog {
+	height: 100%;
+	width: 50%;
+	display: flex;
+	justify-items: flex-start;
+	align-items: flex-start;
+	position: relative;
+}
+
+.player-dialog {
+	height: 100%;
+	width: 50%;
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: flex-end;
+	position: relative;
+}
+
+.player-avatar {
+	height: 50%;
+	width: 20%;
+	background-position: bottom right;
+	image-rendering: crisp-edges;
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: flex;
+	filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
+	filter: drop-shadow(-1px -1px 3px rgb(0, 0, 0));
+}
+
+.enemy-avatar {
+	height: 40%;
+	width: 25%;
+	display: flex;
+	background-position: top left;
+	image-rendering: crisp-edges;
+	background-repeat: no-repeat;
+	background-size: contain;
+	filter: drop-shadow(1px 1px 5px rgb(255, 255, 255));
+	filter: drop-shadow(2px 2px 3px rgb(0, 0, 0));
+}
+
+.enemy-dialog-bubble {
+	border: 3px solid var(--info-color);
+	border-radius: 20px;
+	background-color: rgb(178, 255, 255, 0.8);
+	height: auto;
+	width: 70%;
+}
+
+.player-dialog-bubble {
+	border: 3px solid var(--info-color);
+	border-radius: 20px;
+	background-color: rgb(178, 255, 255, 0.8);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	height: auto;
+	width: 65%;
+	margin-bottom: 8px;
+}
+
+.player-dialog-bubble > h2 {
+	color: black;
+	text-align: right;
+	padding-right: 8px;
+	padding-bottom: 4px;
+	text-shadow: 1px 1px 2px black;
+}
+
+.player-dialog-bubble > p,
+.enemy-dialog-bubble > p {
+	padding: 10px;
+	color: black;
+}
+
+.enemy-dialog-bubble > h2 {
+	color: black;
+	text-align: left;
+	padding-left: 8px;
+	padding-top: 4px;
+	text-shadow: 1px 1px 2px black;
+}
+
+.powers {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 50%;
+	height: 120%;
+    right: -5vw;
+	position: absolute;
+	bottom: 0;
+	z-index: 1000;
+}
+
+.enemy-health,
+.player-health {
+	display: flex;
+	height: 20px;
+	width: 150px;
+	position: absolute;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.player-health {
+	border: 3px solid green;
+	margin: 0 0 4px 4px;
+	bottom: 0;
+	left: 0;
+}
+
+.enemy-health {
+	border: 3px solid rgb(255, 0, 0);
+	top: 0;
+	right: 0;
+	margin: 8px 4px 0 0;
+}
+
+.enemy-health > .heart {
+	background-color: red;
+	width: 33.33%;
+}
+
+.player-health > .heart {
+	background-color: green;
+	width: 33.33%;
+}
+
+
+/* power buttons */
+.button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	position: relative;
+}
+
+.button .bloom-container {
+	position: relative;
+	transition: all 0.2s ease-in-out;
+	border: none;
+	background: none;
+}
+
+.button .bloom-container .button-container-main {
+	width: 50px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+	display: grid;
+	place-content: center;
+	border-right: 5px solid white;
+	border-left: 5px solid rgba(128, 128, 128, 0.147);
+	transform: rotate(-45deg);
+	transition: all 0.5s ease-in-out;
+}
+
+.button .bloom-container .button-container-main .button-inner {
+	height: 60px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	position: relative;
+	box-shadow: rgba(100, 100, 111, 0.5) -10px 5px 10px 0px;
+	transition: all 0.5s ease-in-out;
+}
+
+.button .bloom-container .button-container-main .button-inner .back {
+	position: absolute;
+	inset: 0;
+	border-radius: 50%;
+	background: linear-gradient(
+		60deg,
+		rgb(1, 85, 103) 0%,
+		rgb(147, 245, 255) 100%
+	);
+}
+
+.button .bloom-container .button-container-main .button-inner .front {
+	position: absolute;
+	inset: 5px;
+	border-radius: 50%;
+	background: linear-gradient(
+		60deg,
+		rgb(0, 103, 140) 0%,
+		rgb(58, 209, 233) 100%
+	);
+	display: grid;
+	place-content: center;
+}
+
+.button .bloom-container .button-container-main .button-inner .front .svg {
+	fill: #ffffff;
+	opacity: 0.5;
+	width: 30px;
+	aspect-ratio: 1;
+	transform: rotate(45deg);
+	transition: all 0.2s ease-in;
+}
+
+.button .bloom-container .button-container-main .button-glass {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(255, 255, 255, 0.888) 100%
+	);
+	transform: translate(0%, -50%) rotate(0deg);
+	transform-origin: bottom center;
+	transition: all 0.5s ease-in-out;
+}
+
+.button .bloom-container .bloom {
+	height: 1px;
+	width: 1px;
+	position: absolute;
+	background: white;
+}
+
+.button .bloom-container .bloom1 {
+	top: 10px;
+	right: 20px;
+	box-shadow: rgb(255, 255, 255) 0px 0px 10px 10px,
+		rgb(255, 255, 255) 0px 0px 20px 20px;
+}
+
+.button .bloom-container .bloom2 {
+	bottom: 10px;
+	left: 20px;
+	box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 10px 10px,
+		rgba(255, 255, 255, 0.5) 0px 0px 30px 20px;
+}
+
+.button:hover {
+	transform: scale(1.1);
+}
+
+.button:hover .button-container-main .button-glass {
+	transform: translate(0%, -40%);
+}
+
+.button:active {
+	transform: scale(0.7);
+}
+
+.button:active .button-container-main .button-inner {
+	transform: scale(1.2);
+}
+
+.button .text-btn {
+	position: absolute;
+	z-index: 1000;
+	font-size: 1.5rem;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+}
+
+.button:first-child {
+	align-self: flex-start;
+}
+.button:nth-child(2) {
+	align-self: flex-start;
+	margin-left: 60px;
+	margin-bottom: 25px;
+}
+
+.button:last-child {
+	align-self: flex-start;
+	margin-left: 50px;
+}
+
+.main-message{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 1000;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	padding: 10px;
+	border-radius: 10px;
+}
