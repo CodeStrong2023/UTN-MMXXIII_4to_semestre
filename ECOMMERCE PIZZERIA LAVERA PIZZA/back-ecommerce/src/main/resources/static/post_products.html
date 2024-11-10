@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Pizzeria Lavera - Productos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="/js/products/post_product.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary ">
+    <div class="container-fluid">
+        <a class="navbar-brand active" aria-current="page" href="index.html">Pizzeria Lavera Pizza</a>
+        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0" id="navegacion">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="get_products.html">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="get_orders.html">Pedidos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="get_customers.html">Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="get_reservations.html">Reservas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.html">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-7 col-md-6" style="background-color:#e6fffa; padding:10px; border-radius:3px">
+            <div class="d-flex align-items-center">
+                <h1>Agregar Producto</h1>
+                <a class="mx-5 btn btn-primary" id="get_products" href="get_products.html">Listar Productos</a>
+            </div>
+            <form id="add_new_product">
+                <div class="form-group">
+                    <label for="product_name">Nombre del Producto:</label>
+                    <input type="text" class="form-control" id="product_name" placeholder="Ingrese el nombre del producto" required>
+                </div>
+                <div class="form-group">
+                    <label for="product_price">Precio:</label>
+                    <input type="number" step="0.01" class="form-control" id="product_price" placeholder="Ingrese el precio" required>
+                </div>
+                <div class="form-group">
+                    <label for="product_description">Descripción:</label>
+                    <textarea class="form-control" id="product_description" placeholder="Ingrese la descripción"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="product_category">Categoría:</label>
+                    <input type="text" class="form-control" id="product_category" placeholder="Ingrese la categoría" required>
+                </div>
+                <div class="form-group">
+                    <label for="product_ingredients">Ingredientes (separados por comas):</label>
+                    <input type="text" class="form-control" id="product_ingredients" placeholder="Ej. Tomate, Queso, Aceitunas" required>
+                </div>
+                <div class="form-group">
+                    <label for="product_additives">Aditivos (separados por comas):</label>
+                    <input type="text" class="form-control" id="product_additives" placeholder="Ej. Extra Queso, Salsa Especial">
+                </div>
+                <div class="form-group">
+                    <label for="additive_price">Precio del Aditivo:</label>
+                    <input type="number" step="0.01" class="form-control" id="additive_price" placeholder="Ingrese el precio del aditivo" required>
+                </div>
+                <div class="form-group">
+                    <label for="product_size">Tamaño:</label>
+                    <input type="text" class="form-control" id="product_size" placeholder="Ej. Grande, Mediana, Personal" required>
+                </div>
+                <div class="form-group">
+                    <label for="product_image">URL de la Imagen:</label>
+                    <input type="text" class="form-control" id="product_image" placeholder="Ingrese la URL de la imagen del producto">
+                </div>
+
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </form>
+            <div id="response" style="display:none; margin-top:10px"></div>
+        </div>
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <img src="img/product.png" class="img-fluid" alt="Imagen del Producto">
+        </div>
+    </div>
+</div>
+
+<footer class="py-3 my-4">
+    <p class="text-center text-body-secondary border-top m-0">Proyecto integrador final de la Materia Backend a cargo del profesor Jorge Pereyra </p>
+    <p class="text-center text-body-secondary m-0">Desarrollado por Ponce María Elena y Ruiz Daniel </p>
+    <p class="text-center text-body-secondary m-0 fw-bold">CTD - Digital House - 2024</p>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="/js/products/post_product.js"></script>
+</body>
+</html>

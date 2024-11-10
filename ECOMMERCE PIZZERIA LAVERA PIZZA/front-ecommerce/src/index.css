@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#root {
+    height: 100%;
+    width: 100vw;
+    max-width: none; /* Asegúrate de que no tenga max-width */
+    padding: 0; /* Asegúrate de que no tenga padding */
+    margin: 0 auto; /* Si quieres centrarlo */
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+/* Estilos para el scrollbar */
+::-webkit-scrollbar {
+  width: 8px; /* Ancho del scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1; /* Color del "thumb" */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Fondo del track */
+}
