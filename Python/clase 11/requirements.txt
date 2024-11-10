@@ -1,0 +1,6 @@
+pip==22.3.1
+wheel==0.38.4
+pillow==9.5.0
+setuptools==65.5.1
+packaging==23.1
+numpy==1.26.0
