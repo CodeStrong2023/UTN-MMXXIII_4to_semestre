@@ -1,0 +1,57 @@
+/* falta armar menu hamburguesa */
+
+
+/* Responsive design */
+@media only screen and (max-width: 480px) {
+	div.powers { 
+        height: 110%;
+        right: -4vw;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    #select > .container{
+        width: 100%;
+    }
+}
+
+@media screen  and (max-width: 1280px) {
+    .menu-container {
+		display: none;
+	}
+
+
+	.flow-container {
+		width: 100%;
+		padding-right: 0;
+	}
+    
+    #battle{
+        margin:0;
+        width: 100%;
+    }
+    .flow-container > #battle > .battle-arena {
+        background-size: cover;
+        height: 80vh;
+        overflow: hidden;
+    }
+
+    .player-dialog-bubble > h2, .enemy-dialog-bubble > h2 {
+        font-size: 1.2rem;
+    }
+    #score > .flow-container{
+        padding-right:0;
+    
+    }
+    #rules > .flow-container{
+        padding-right:0;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    div.powers { 
+        height: 100%;
+        right: -10vw;
+    }
+}
+

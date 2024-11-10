@@ -1,0 +1,24 @@
+.flow-container > #start {
+	flex-grow: 1;
+	width: 100%;
+	max-width: 1020px;
+	display: flex;
+	flex-direction: column;
+}
+
+
+.hero{
+    background-image: url('../assets/ui/raf_750x1000_075_t_FFFFFF_97ab1c12de.u2-removebg-preview.png');
+    width: 80%;
+    height: 80%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 20px 0;
+    opacity: 0.7;
+    transform: translate(12%,0);
+    z-index: -1;
+}
+.flow-container:hover .hero{
+    opacity: 1;
+}
